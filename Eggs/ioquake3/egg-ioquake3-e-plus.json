@@ -24,7 +24,7 @@
   },
   "scripts": {
     "installation": {
-      "script": "#!/bin/bash\r\n# dirty install script for ioquake3\r\n# will get updated more later\r\n\r\napt update -y\r\napt install -y wget unzip git build-essential\r\n\r\nif [ ! -d /mnt/server/ ]; then\r\n\tmkdir -p /mnt/server/\r\nfi\r\n\r\ncd /mnt/server/\r\n\r\nwget http://www.openarena.ws/request.php?4 -O ioquake3-linux.zip\r\n\r\nunzip -o ioquake3-linux.zip ioquake3 \r\n\r\nmv -f ioquake3/* /mnt/server/\r\n\r\nrm -rf ioquake3/ openarena.zip",
+      "script": "#!/bin/bash\r\n# dirty install script for ioquake3\r\n# will get updated more later\r\n\r\napt update -y\r\napt install -y wget unzip git build-essential\r\n\r\nif [ ! -d /mnt/server/ ]; then\r\n\tmkdir -p /mnt/server/\r\nfi\r\n\r\ncd /mnt/server/\r\n\r\nwget https://github.com/thomasbonsirven/Pterodactyl-eggs/raw/main/Eggs/ioquake3/ioquake3-linux.zip -O ioquake3-linux.zip\r\n\r\nunzip -o ioquake3-linux.zip ioquake3 \r\n\r\nmv -f ioquake3/* /mnt/server/\r\n\r\nrm -rf ioquake3/ ioquake3-linux.zip",
       "container": "debian:buster-slim",
       "entrypoint": "bash"
     }
